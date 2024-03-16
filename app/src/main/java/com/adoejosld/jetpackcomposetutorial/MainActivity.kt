@@ -27,16 +27,16 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            JetpackComposeTutorialTheme {
+
                 MyComponents()
-            }
+
         }
     }
 }
 
 @Composable
 fun MyComponents() {
-    Row(modifier = Modifier.padding(all = 12.dp)) {
+    Row(modifier = Modifier.padding(all = 12.dp).background(Color.Cyan)) {
         MyImage()
         MyTexts()
     }
@@ -49,7 +49,7 @@ fun MyTexts() {
         Spacer(modifier = Modifier.heightIn(6.dp))
         MyText("Soy Aramis", Color.Blue)
         Spacer(modifier = Modifier.heightIn(6.dp))
-        MyText(text = "Aprendo a Programar", Color.Red)
+        MyText(text = "Aprendo a Programar", Color.DarkGray)
     }
 }
 
