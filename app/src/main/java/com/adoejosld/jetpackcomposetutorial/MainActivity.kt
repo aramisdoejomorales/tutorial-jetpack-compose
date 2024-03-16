@@ -12,6 +12,7 @@ import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -29,8 +30,6 @@ class MainActivity : ComponentActivity() {
             JetpackComposeTutorialTheme {
                 MyComponents()
             }
-
-
         }
     }
 }
@@ -46,11 +45,11 @@ fun MyComponents() {
 @Composable
 fun MyTexts() {
     Column(modifier = Modifier.padding(all = 8.dp)) {
-        MyText(text = "Hola Jetpack Compose")
+        MyText(text = "Hola Jetpack Compose", Color.Black)
         Spacer(modifier = Modifier.heightIn(6.dp))
-        MyText("Soy Aramis")
+        MyText("Soy Aramis", Color.Blue)
         Spacer(modifier = Modifier.heightIn(6.dp))
-        MyText(text = "Aprendo a Programar")
+        MyText(text = "Aprendo a Programar", Color.Red)
     }
 }
 
@@ -62,15 +61,13 @@ fun MyImage() {
         modifier = Modifier
             .size(85.dp)
             .clip(CircleShape)
-            .background(
-                Color.Cyan
-            )
+            .background(MaterialTheme.colorScheme.primary)
     )
 }
 
 @Composable
-private fun MyText(text: String) {
-    Text(text)
+private fun MyText(text: String, color: Color) {
+    Text(text, color = color)
 }
 
 @Preview
